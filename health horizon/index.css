@@ -1,0 +1,100 @@
+/* style.css */
+
+body {
+    background-image: url('https://media.istockphoto.com/id/2099357117/vector/heart-pulse-and-heartbeat-heartbeat-lone-cardiogram-beautiful-healthcare-medical-background.jpg?s=612x612&w=0&k=20&c=5agokqkO2Ls-JGCXC5eYl8mH_EO1ZnihZc-pEYtVBOI=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* Default text color for visibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+    overflow: hidden; /* Prevent scroll bars */
+}
+
+h1 {
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    text-align: center; /* Center the heading text */
+    color: rgb(239, 206, 15); /* Heading color */
+    font-family:Georgia, 'Times New Roman', Times, serif
+    font-size: 48px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Add shadow for depth */
+    letter-spacing: 2px; /* Increase space between letters */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+p {
+    font-size: 36px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: Make text bold */
+    color: #00FFFF; /* Text color aqua */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for better readability */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
+}
+
+p:hover {
+    transform: scale(1.05); /* Slightly enlarge text on hover */
+}
+
+.topnav {
+    position: absolute; /* Position the nav bar at the top */
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for the nav bar */
+    padding: 14px 0; /* Padding for nav items */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for nav bar */
+}
+
+.topnav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    border-radius: 5px; /* Rounded corners for the active link */
+    font-weight: bold; /* Optional: Bold text for active link */
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    background-color: rgba(0, 0, 0, 0.6); /* Light background for the navbar */
+    padding: 10px;
+}
+
+.topnav .nav-title {
+    margin-right: auto; /* Pushes the title to the left */
+    margin-left: 10px; /* Add margin to move it slightly to the left */
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #00FFFF; /* Change color if desired */
+}
+
+.topnav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #a2acb6; /* Bootstrap link color */
+}
+
+.topnav a.active {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    /* CSS for smaller screens */
+}

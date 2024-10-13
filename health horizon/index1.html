@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Horizon</title>
+    <link rel="icon" href="https://img.freepik.com/premium-vector/hospital-plus-icon-medical-health-symbol-vector-illustration_662353-370.jpg">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* General Styles */
+      body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-image: url("https://media.istockphoto.com/id/2099357117/vector/heart-pulse-and-heartbeat-heartbeat-lone-cardiogram-beautiful-healthcare-medical-background.jpg?s=612x612&w=0&k=20&c=5agokqkO2Ls-JGCXC5eYl8mH_EO1ZnihZc-pEYtVBOI=");
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    color: #333;
+    
+}
+
+.topnav {
+    position: absolute; /* Position the nav bar at the top */
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for the nav bar */
+    padding: 14px 0; /* Padding for nav items */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for nav bar */
+}
+
+.topnav a.treat {
+    background-color: #4CAF50;
+    border-radius:5px; /* Rounded corners for the active link */
+    font-weight: bold; /* Optional: Bold text for active link */
+}
+.topnav a {
+    display: inline-block;
+    color: white;
+   
+    border-radius: 5px;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+.topnav .nav-title {
+    margin-right: auto; /* Pushes the title to the left */
+    margin-left: 10px; /* Add margin to move it slightly to the left */
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #00FFFF; /* Change color if desired */
+}
+.topnav {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    background-color:  rgba(0, 0, 0, 0.6); /* Light background for the navbar */
+    padding: 10px;
+}
+
+.topnav .nav-title {
+    margin-right: auto; /* Pushes the title to the left */
+    margin-left: 10px; /* Add margin to move it slightly to the left */
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #00FFFF; /* Change color if desired */
+}
+
+.topnav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #a2acb6; /* Bootstrap link color */
+}
+
+.topnav a.active {
+    font-weight: bold;
+}
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin-top: 50 px;;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+}
+
+/* Additional styles for headers, paragraphs, etc. */
+h1, h2, h3 {
+    color: #00796b; /* Consistent header color */
+}
+
+p {
+    line-height: 1.6; /* Improve readability */
+}
+
+ul {
+    padding-left: 20px; /* Indentation for lists */
+}
+
+ul li {
+    margin: 5px 0; /* Space between list items */
+}
+
+        /* Container Styles */
+        .container {
+            max-width:1000px;
+            margin-top:100px;;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        /* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #00796b;
+    margin: 0;
+    padding: 10px;
+    border: 2px solid #00796b; /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+header h1:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+header p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+    padding: 5px;
+    transition: color 0.3s, text-shadow 0.3s; /* Transition for hover effect */
+}
+
+header p:hover {
+    color: #00796b; /* Change color on hover */
+    text-shadow: 1px 1px 5px rgba(0, 121, 107, 0.5); /* Shadow effect on hover */
+}
+
+        /* Logo Styles */
+        .logo {
+    position: absolute;
+    top: 15px;
+    width: 80px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+        .logo.left {
+            left: 20px;
+        }
+
+        .logo.right {
+            right: 20px;
+        }
+
+        /* Form Styles */
+        #symptomForm {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        #symptomForm:hover {
+            transform: scale(1.02);
+        }
+
+        #symptomForm label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        #symptomForm input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        #symptomForm input[type="text"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        #symptomForm button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #symptomForm button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Result Styles */
+        #result {
+            margin-top: 20px;
+            background: #e0f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .image-item {
+            flex: 0 48%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #result img {
+            width: 100%;
+            border: 2px solid #00796b;
+            border-radius: 4px;
+            padding: 5px;
+            transition: transform 0.2s;
+        }
+
+        #result img:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            color: #00796b;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        /* Highlight Duration Styles */
+        .highlight-duration {
+            background-color: yellow;
+            border: 2px solid #00796b;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+      
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .timings-container {
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 10px; /* Spacing inside the box */
+    background-color: #f9f9f9; /* Light background color */
+    margin: 10px 0; /* Margin for spacing */
+        }
+    @media screen and (max-width: 768px) {
+    /* CSS for smaller screens */
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+
+
+</head>
+<body>
+    <div class="topnav">
+        <a href="./index.html" class="nav-title"><b>Health Horizon</b></a>
+        <a class="active" href="./index.html">Home</a>
+        <a class="treat" href="index1.html">Treatment</a>
+        <a href="index2.html">Feedback</a>
+    </div>
+    <div class="container">
+        <header>
+            <img src="https://img.freepik.com/premium-vector/hospital-plus-icon-medical-health-symbol-vector-illustration_662353-370.jpg" alt="Left Logo" class="logo left">
+            <h1>HEALTH HORIZON</h1>
+            <img src="https://img.freepik.com/premium-vector/hospital-plus-icon-medical-health-symbol-vector-illustration_662353-370.jpg" alt="Right Logo" class="logo right">
+            <p>Enter your symptoms below to get treatment recommendations.</p>
+        </header>
+        <main>
+            
+            <div class="form-container">
+                <form id="symptomForm">
+                    <label for="symptoms">Enter Disease/symptoms:</label>
+                    <input type="text" id="symptoms" name="symptoms" placeholder="e.g., fever, cough" required>
+                    <button type="submit">Get Treatment</button>
+                </form>
+            </div>
+            <div id="result">
+                <!-- Treatment result will be displayed here -->
+            </div>
+          
+        </main>
+        <footer>
+            <p>&copy; 2024 Health Horizon Inc.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('symptomForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const symptoms = document.getElementById('symptoms').value.toLowerCase();
+            let result = '';
+
+            if (symptoms.includes('dengue')) {
+                result = `
+                    <h2>Dengue Fever</h2>
+                    <p>Dengue fever is a mosquito-borne illness that can cause high fever, severe headaches, pain behind the eyes, joint and muscle pain.</p>
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/334049272/TO/AE/EC/6548604/acetaminophen-tablets-usp-500-mg.jpg" alt="Dengue">
+                            <p><b>Acetaminophen</b></p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                    Ensure at least 4 hours between doses.<br/>
+                                    Can be taken with or without food.
+                                    </p>
+                        </div>
+                        <div class="image-item">
+                            <img src="https://www.alicantodrugs.com/wp-content/uploads/2023/06/Carica-Papaya-Leaf-Extract-1100-mg-Tablets.jpg" alt="Dengue">
+                            <p><b>Tab.Carican</b></p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                Take this Tablet With Some Meals.<br/>
+                                After 2 to 3 hours Time Span.
+                                </p>
+                            
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="https://bioresurge.in/cdn/shop/products/PapayaLeaf-1_1024x1024.jpg?v=1723616993" alt="Dengue">
+                            <p>Papaya Leaf Syrup</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                 1–2 tablespoons (15–30 ml) 2–3 times a day.<br/>
+                                 1 teaspoon to 1 tablespoon (5–15 ml) 2–3 times a day.
+                            </p>
+                        </div>
+
+
+                        <div class="image-item">
+                            <img src="https://storage.googleapis.com/shy-pub/100576/1636268802395_SKU-0118_0.jpg" alt="Dengue">
+                            <p>Tab.Paracetamol</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                             Tablets of  500 mg to 1000 mg every 4 to 6 hours.<br/>
+                             Take it After Taking Some Meal.
+                    
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Treatment:</h3>
+                    <ul>
+                        <li>Rest and hydration</li>
+                        <li>Pain relievers like acetaminophen</li>
+                        <li>Avoid NSAIDs (like ibuprofen or aspirin)</li>
+                        <li>Pain relievers like Tab.Carican</li>
+                        <li>Energy Gain Syrup like Papaya leaf</li>
+                    </ul>
+                    <div class="highlight-duration">Duration of Recovery: 1–2 weeks</div>
+                `;
+            } else if (symptoms.includes('diabetes') || symptoms.includes('frequent urination')) {
+                result = `
+                    <h2>Diabetes</h2>
+                    <p>Diabetes is a chronic condition that affects the way your body processes blood sugar (glucose).</p>
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/319245107/IK/TF/PU/1943484/30-mg-pioglitazone-tablets.jpeg" alt="Diabetes">
+                            <p>Pioglitazone</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                 15 mg or 30 mg once a day. <br/>
+                                 maximum dose of 45 mg daily. <br/>
+                                 Take Medicine After Taking Meal.
+                                 </p>
+                        </div>
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2022/10/RO/RH/MC/101315720/metformin-500mg-tablet.jpg" alt="Diabetes">
+                            <p>Metformin</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                500 mg or 850 mg once or twice a day. <br/>
+                                maximum of 2,000–2,500 mg per day. <br/>
+                                Metformin is best taken with meals or right after eating.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2023/2/DS/NG/NU/141448227/sitagliptin-tablets-50-mg-500x500.jpeg" alt="Diabetes">
+                            <p>Sitagliptin</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                Sitagliptin can be taken with or without food.<br/>
+                                Typical dose is 100 mg once daily.
+                                </p>
+
+                        </div>
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2020/8/VF/OM/ZR/93762891/glipizide.jpg" alt="Diabetes">
+                            <p>Glipizide</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                Glipizide is best taken 30 minutes before meals.<br/>
+                                Typical starting dose is 2.5 mg to 5 mg once daily.<br/>
+                                The maximum dose is 20 mg per day.
+                                </p>
+                        </div>
+                    </div>
+                    <h3>Treatment:</h3>
+                    <ul>
+                        <li><b>Tab Thiazolidinedione</b></li>
+                        <li>Tab Metformin</li>
+                        <li>Tab Glupin CR</li>
+                        <li>Tab Citagliptin</li>
+                        <li>Insulin therapy</li>
+                        <li>Regular exercise</li>
+                        <li>Healthy eating habits</li>
+                    </ul>
+                `;
+            } else if (symptoms.includes('typhoid')) {
+                result = `
+                    <h2>Typhoid</h2>
+                    <p>Typhoid fever is a bacterial infection that can lead to fever, weakness, abdominal pain, and more.</p>
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2022/6/JO/DZ/SW/59574726/500mg-chloramphenicol-capsules-ip.jpg" alt="Typhoid">
+                            <p>Chloramphenicol</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                    Taken every 6 hours <br/>
+                                    With food or on an empty stomach.
+                            </p>
+                        </div>
+                        <div class="image-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQac36aCnyf5r2OmfwJ6VWVWp-cudBonznSSA&s" alt="Typhoid">
+                            <p>Cefspan Antibiotic</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                 Roughly 12-hour interval between doses.<br/>
+                                 Can usually be taken with or without food.
+
+                                </p>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_gs-iTzARKWMeJaM28pjBKvlD-weqxDoy9g&s" alt="Typhoid">
+                            <p>Tab.Co-Trimoxazole</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                Take it at approximately 12-hour intervals.<br/>
+                                It can be taken with or without food.
+                                </p>
+                        </div>
+                        <div class="image-item">
+                            <img src="https://5.imimg.com/data5/YH/VT/TP/SELLER-109604861/ampicillin-capsule.jpg" alt="Typhoid">
+                            <p>Tab.Ampicillin</p>
+                            <h3><b>Timings</b></h3>
+                            <p>
+                                To be taken every 6 hours (4 times a day)<br/>
+                                Ampicillin can be taken with or without food.
+                                </p>
+                        </div>
+                    </div>
+                    <h3>Treatment:</h3>
+                    <ul>
+                        <li>Tab chloramphenicol</li>
+                        <li>Tab ampicillin</li>
+                        <li>Cotrimoxazole</li>
+                        <li>Increased fluid intake</li>
+                        <li>Rest</li>
+                    </ul>
+                    <div class="highlight-duration">Duration of Recovery: 7 to 10 days</div>
+                `;
+            }else if (symptoms.includes('cancer')) {
+    result = `
+        <h2>Cancer</h2>
+        <p>Cancer is a disease in which some of the body's cells grow uncontrollably and spread to other parts of the body.</p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/6/RR/XH/NU/76043358/anti-cancer-injection-500x500.jpg" alt="Granisetron Hydrochloride Injection">
+                <p>Granisetron Hydrochloride Injection</p>
+                <h3><b>Timings</b></h3>
+                <p>As directed by your healthcare provider.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://www.surgicalhouses.com/assets/blog/Trastuzumab-Injection.jpeg" alt="Trastuzumab Injection">
+                <p>Trastuzumab Injection</p>
+                <h3><b>Timings</b></h3>
+                <p>As directed by your healthcare provider.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/8/440818511/AM/NU/RE/10132544/anti-cancer-500x500.jpg" alt="Tab Imatinib">
+                <p>Tab.Imatinib Tablets</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/YK/LP/MY-7498890/bevacirel-400mg-500x500.jpg" alt="BevaciRel Injection">
+                <p>BevaciRel Injection</p>
+                <h3><b>Timings</b></h3>
+                <p>As directed by your healthcare provider.</p>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Tab Imatinib</li>
+            <li>Injection Bevacirel</li>
+            <li>Granisetron Hydrochloride Injection</li>
+            <li>Trastuzumab Injection</li>
+            <li>Rest</li>
+        </ul>
+        <div class="highlight-duration">Changes to your lifestyle may be needed to make sure the body has enough time and rest to allow a complete recovery.</div>
+    `;
+} else if (symptoms.includes('tuberculosis')) {
+    result = `
+        <h2>Tuberculosis</h2>
+        <p>Tuberculosis (TB) is an infectious disease that most often affects the lungs and is caused by a type of bacteria.</p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/bza0zx9p0oflyszyiexb.jpg" alt="Ethambutol Hydrochloride Tablet">
+                <p>Ethambutol Hydrochloride Tablet</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://www.japan.go.jp/kizuna/_src/7989417/fighting_tb_throughout_the_world_03.jpg?v=1725342416054" alt="Deltyba Tablet">
+                <p>Deltyba Tablet</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://sgpharma.com/home/product_images/Product-14309941880.jpg" alt="Tab Ethionamide">
+                <p>Tab.Ethionamide</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/MU/SL/OD/SELLER-66693614/2.jpg" alt="Cutrax Injection">
+                <p>Cutrax Injection</p>
+                <h3><b>Timings</b></h3>
+                <p>As directed by your healthcare provider.</p>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Ethambutol Hydrochloride Tablet</li>
+            <li>Streptomycin Injection</li>
+            <li>Tab.Ethionamide</li>
+            <li>Cutrax Injection</li>
+            <li>Rest</li>
+        </ul>
+        <div class="highlight-duration">Duration of Recovery: 6 to 12 days</div>
+    `;
+} else if (symptoms.includes('fever')) {
+    result = `
+        <h2>Fever Treatment</h2>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://assets.mrmed.in/product-images/product-images-1710571435935-305675867-Calpol%20250mg%20Syrup_91069%20%281%29.jpg" alt="Paracetamol Syrup">
+                <p>Paracetamol Syrup</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken every 4-6 hours as needed.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/410217491/ST/DQ/NW/125278182/fever-medicine-tablet-ptech-650.jpeg" alt="Paracetamol Tablet">
+                <p>Paracetamol Tablet</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken every 4-6 hours as needed.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/48d6acc9768a451b91d741618c64a5d8.jpg" alt="ORS Powder">
+                <p>ORS Powder</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken as needed for hydration.</p>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Paracetamol Syrup</li>
+            <li>Paracetamol Tablet</li>
+            <li>ORS Powder</li>
+            <li>Rest</li>
+        </ul>
+        <div class="highlight-duration">Duration of Recovery: 3 to 4 days</div>
+    `;
+} else if (symptoms.includes('cough')) {
+    result = `
+        <h2>Cough Treatment</h2>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://greencrossindia.com/image/product/polergy-ml-tablet20240617130752.jpg" alt="Leocitrizine Tablet">
+                <p>Leocitrizine Tablet</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://images.apollo247.in/pub/media/catalog/product/b/e/ben0006_2.jpg" alt="Benadryl Syrup">
+                <p>Benadryl Syrup</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken every 6-8 hours as needed.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://www.cofsils.com/uploadfile/product/medicated_cough.jpg" alt="Cofsils Cough Syrup">
+                <p>Cofsils Cough Syrup</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken every 6 hours as needed.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://static.toiimg.com/photo/104653279/104653279.jpg" alt="Warm Water">
+                <p>Warm Water</p>
+                <h3><b>Timings</b></h3>
+                <p>Drink as needed.</p>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Leocitrizine Tablet</li>
+            <li>Benadryl Syrup</li>
+            <li>Cofsils Cough Syrup</li>
+            <li>Drink Warm Water</li>
+            <li>Rest</li>
+        </ul>
+        <div class="highlight-duration">Duration of Recovery: 3 weeks</div>
+    `;
+}
+
+// Adding Pneumonia
+else if (symptoms.includes('pneumonia')) {
+    result = `
+        <h2>Pneumonia</h2>
+        <p>Pneumonia is an infection that inflames the air sacs in one or both lungs, which may fill with fluid.</p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/332350358/SI/JT/VF/98283251/amoxicillin-drugs3.jpg" alt="Amoxicillin">
+                <p>Amoxicillin</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken every 8 hours.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/319647623/NW/AA/UG/135658020/azithromycin-tablet-i-p-500mg.jpg" alt="Azithromycin">
+                <p>Azithromycin</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Antibiotics like Amoxicillin or Azithromycin</li>
+            <li>Rest and hydration</li>
+            <li>Over-the-counter pain relievers</li>
+        </ul>
+        <div class="highlight-duration">Duration of Recovery: 1–3 weeks</div>
+    `;
+}
+
+// Adding Thyroid Issues
+else if (symptoms.includes('thyroid')) {
+    result = `
+        <h2>Thyroid Disorders</h2>
+        <p>Thyroid disorders can lead to either an underactive or overactive thyroid, affecting metabolism and energy levels.</p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://medias.watsons.com.ph/publishing/WTCPH-10003233-front-zoom.jpg?version=1721934883" alt="Levothyroxine">
+                <p>Levothyroxine</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily on an empty stomach.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/1/XW/LT/OO/88462799/methimercazole-10-tablet.jpg" alt="Methimazole">
+                <p>Methimazole</p>
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Levothyroxine for hypothyroidism</li>
+            <li>Methimazole for hyperthyroidism</li>
+            <li>Regular monitoring and consultation with an endocrinologist</li>
+        </ul>
+    `;
+}
+
+// Adding High Blood Pressure (BP)
+else if (symptoms.includes('high blood pressure') || symptoms.includes('hypertension') || symptoms.includes('bp')) {
+    result = `
+        <h2>High Blood Pressure (Hypertension)</h2>
+        <p>High blood pressure is a condition in which the force of the blood against the artery walls is too high.</p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/6/426611658/CE/BH/JX/222505486/product-jpeg.jpg" alt="Lisinopril">
+                <p>Lisinopril</p>
+                
+                <div class="timings-container">
+    <h3><b>Timings</b></h3>
+    <p>To be taken once daily.</p>
+</div>
+            </div>
+            <div class="image-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLT612O6Bl6XIfTZ-KdmEMqDK63phujx_D3A&s" alt="Amlodipine">
+                <p>Amlodipine</p>
+                <div class="timings-container">
+                <h3><b>Timings</b></h3>
+                <p>To be taken once daily.</p>
+                </div>
+            </div>
+        </div>
+        <h3>Treatment:</h3>
+        <ul>
+            <li>Medications like Lisinopril or Amlodipine</li>
+            <li>Lifestyle changes including diet and exercise</li>
+            <li>Regular monitoring of blood pressure</li>
+        </ul>
+        <div class="highlight-duration">Ongoing management is important.</div>
+    `;
+}
+
+
+    // Continue with other existing conditions...
+
+    else {
+        result = '<h2>No matching disease found.</h2>';
+    }
+
+    document.getElementById('result').innerHTML = result;
+});
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
